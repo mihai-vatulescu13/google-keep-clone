@@ -4,3 +4,10 @@
   // global app font style:
   font-family: Roboto, Arial, sans-serif;
 }
+
+.main-app-container {
+  .side-menu-and-notes-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+  }
+}

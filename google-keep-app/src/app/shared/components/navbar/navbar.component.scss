@@ -1,0 +1,58 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgb(200, 200, 200);
+
+  .app-logo {
+    color: orange;
+    font-size: 3rem;
+  }
+
+  .icon-and-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .app-title {
+    color: rgb(71, 71, 71);
+    font-size: 1.5rem;
+    margin: 10px;
+  }
+
+  .left-side-menu {
+    border-radius: 50%;
+    border: none;
+    padding: 12px;
+    margin: 10px;
+    background-color: white;
+    cursor: pointer;
+
+    .left-side-menu-btn-icon {
+      font-size: 1.4rem;
+      color: gray;
+    }
+  }
+
+  .left-side-menu:hover {
+    background-color: whitesmoke;
+  }
+
+  .note-search-bar {
+    input {
+      background-color: whitesmoke;
+      height: 35px;
+      width: 400px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      padding: 10px;
+      color: gray;
+    }
+  }
+}
