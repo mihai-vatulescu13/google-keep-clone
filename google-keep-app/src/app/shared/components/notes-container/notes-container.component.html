@@ -1,6 +1,10 @@
 <!-- create note component will be created and rendered here: -->
-<app-button (click)="onCreateNote()" [text]="'Create note'"></app-button>
-<div class="notes-list">
-  <app-note *ngFor="let note of notesData" [noteContent]="note"></app-note>
-</div>
-<!-- to be continued with the rest of the actions/features corresponding to the task -->
+<!-- when the user clicks outside of the create note component the note gets created: -->
+<section class="notes-list-container">
+  <!-- <app-button (click)="onCreateNote()" [text]="'Create note'"></app-button> -->
+  <app-create-note></app-create-note>
+
+  <div class="notes-list">
+    <app-note *ngFor="let note of notesData" [noteContent]="note"></app-note>
+  </div>
+</section>

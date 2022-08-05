@@ -1,0 +1,11 @@
+.create-note-container {
+  // this style structure si a lot of similar with note css structure(find a way to make this style generic for both components by applying DRY principle)
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  width: 650px;
+  min-height: 100px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid rgb(192, 192, 192);
+}

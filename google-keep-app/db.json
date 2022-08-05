@@ -4,18 +4,18 @@
       "id": 1,
       "title": "Note 1 title",
       "text": "this is note 1 with mock test content",
-      "selectedColor": "gray-color"
+      "selectedColor": "violet-color"
     },
     {
       "id": 2,
       "title": "Note 2 title",
       "text": "this is note 2 with mock test content this is note 2 with mock test contentthis is note 2 with mock test contentthis is note 2 with mock test content",
-      "selectedColor": "gray-color"
+      "selectedColor": "green-color"
     },
     {
       "title": "mock note",
       "text": "test POST request",
-      "selectedColor": "gray-color",
+      "selectedColor": "yellow-color",
       "id": 3
     }
   ]

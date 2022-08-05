@@ -1,6 +1,6 @@
-<div
+<section
   class="card-container"
-  [class]="currentNoteColor"
+  [class]="noteContent.selectedColor"
   [ngClass]="'orange-border'"
 >
   <h2>{{ noteContent.title }}</h2>
@@ -18,4 +18,4 @@
       (click)="onSetNoteColor(color)"
     ></li>
   </ul>
-</div>
+</section>

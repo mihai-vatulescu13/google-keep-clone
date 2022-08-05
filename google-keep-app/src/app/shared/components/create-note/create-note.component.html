@@ -1,0 +1,20 @@
+<section class="create-note-container">
+  <h3>Create note</h3>
+
+  <!-- here we need 2 inputs: one for title, a second one for the text: -->
+  <app-textfield
+    [inputType]="'text'"
+    [placeHolder]="'Title...'"
+  ></app-textfield>
+
+  <app-textfield
+    *ngIf="showNoteText"
+    [inputType]="'text'"
+    [placeHolder]="'Create note...'"
+  ></app-textfield>
+
+  <section class="note-options">
+    <!-- color picker also needs to be a generic component: -->
+    <!-- options here:color,background etc. -->
+  </section>
+</section>

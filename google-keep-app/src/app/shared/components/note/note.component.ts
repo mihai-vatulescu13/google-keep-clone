@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faBrush } from '@fortawesome/free-solid-svg-icons';
+import { NotesService } from 'src/app/services/notes.service';
 import { NoteModel } from '../../models/note.component.model';
 import { colorsOptions } from './note.data';
 
@@ -14,11 +15,12 @@ export class NoteComponent implements OnInit {
   public isColorMenuOpen: boolean = false;
   public colors: string[] = colorsOptions;
   public brushIcon = faBrush;
-  public currentNoteColor: string;
+
+  constructor(private notesService: NotesService) {}
 
   ngOnInit() {
-    this.currentNoteColor = this.noteContent.selectedColor;
-    console.log(this.currentNoteColor);
+    // this.currentNoteData = this.noteContent;
+    console.log('initial note setting:', this.noteContent);
   }
 
   public onOpenColorsMenu(): void {
@@ -27,8 +29,11 @@ export class NoteComponent implements OnInit {
 
   public onSetNoteColor(selectedColor: string): void {
     // here we need o call a service method that send the chages to the server:
-    console.log('selected color is:', selectedColor);
-    this.currentNoteColor = selectedColor;
-    console.log('new color:', this.currentNoteColor);
+    this.noteContent.selectedColor = selectedColor;
+
+    this.notesService.updateNote(this.noteContent).subscribe((res) => {
+      this.noteContent = res;
+      console.log('note update with success!');
+    });
   }
 }

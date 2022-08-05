@@ -29,13 +29,22 @@ export class NotesService {
     );
   }
 
+  //get all notes:
   public getNotes() {
     return this.http.get<NoteModel[]>(NOTES_URL);
   }
 
+  // create a note:
   public addNote(data: NoteModel) {
     return this.http
       .post<NoteModel>(NOTES_URL, data)
       .pipe(catchError((error) => this.handleError(error)));
+  }
+
+  public updateNote(selectedNote: NoteModel) {
+    return this.http.put<NoteModel>(
+      NOTES_URL + '/' + selectedNote.id,
+      selectedNote
+    );
   }
 }

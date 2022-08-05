@@ -10,4 +10,5 @@ export const colorsOptions: string[] = [
   'pink-color',
   'maron-color',
   'gray-color',
+  'white',
 ];
