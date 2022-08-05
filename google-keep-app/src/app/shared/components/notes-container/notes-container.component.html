@@ -1,5 +1,5 @@
 <!-- create note component will be created and rendered here: -->
-<button (click)="onCreateNote()">Create note:</button>
+<app-button (click)="onCreateNote()" [text]="'Create note'"></app-button>
 <div class="notes-list">
   <app-note *ngFor="let note of notesData" [noteContent]="note"></app-note>
 </div>

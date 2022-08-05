@@ -12,6 +12,7 @@ export class NotesContainerComponent implements OnInit {
   public mockNote: NoteModel = {
     title: 'mock note',
     text: 'test POST request',
+    selectedColor: 'gray-color',
   };
 
   constructor(public notesService: NotesService) {}

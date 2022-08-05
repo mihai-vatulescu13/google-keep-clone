@@ -1,4 +1,21 @@
-<div class="card-container">
+<div
+  class="card-container"
+  [class]="currentNoteColor"
+  [ngClass]="'orange-border'"
+>
   <h2>{{ noteContent.title }}</h2>
   <p>{{ noteContent.text }}</p>
+
+  <button (click)="onOpenColorsMenu()">
+    <fa-icon class="change-color-btn" [icon]="brushIcon"></fa-icon>
+  </button>
+
+  <!-- add on the bottom an color options list: -->
+  <ul *ngIf="isColorMenuOpen">
+    <li
+      *ngFor="let color of colors"
+      [ngClass]="color"
+      (click)="onSetNoteColor(color)"
+    ></li>
+  </ul>
 </div>

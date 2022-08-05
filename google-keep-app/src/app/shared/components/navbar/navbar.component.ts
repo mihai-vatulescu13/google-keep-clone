@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  faBars,
-  faPenToSquare,
-  faSearch,
-} from '@fortawesome/free-solid-svg-icons';
+import { faBars, faFilePen, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +7,7 @@ import {
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  public writeIcon = faPenToSquare;
+  public writeIcon = faFilePen;
   public barIcon = faBars;
   public searchIcon = faSearch;
 }

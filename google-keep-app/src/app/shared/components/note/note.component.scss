@@ -1,8 +1,100 @@
 .card-container {
-  border: 1px solid gray;
+  border: 1px solid rgb(192, 192, 192);
   border-radius: 8px;
   width: 300px;
-  height: 150px;
+  min-height: 150px;
   margin: 15px;
   padding: 10px;
+  cursor: pointer;
+
+  button {
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: white;
+
+    .change-color-btn {
+      color: gray;
+      font-size: 1rem;
+    }
+  }
+
+  button:hover {
+    background-color: whitesmoke;
+  }
+
+  ul {
+    // background-color: pink;
+    width: auto;
+    list-style-type: none;
+    display: flex;
+    justify-content: left;
+    padding-left: 0;
+    border-radius: 5px;
+    // border: 1px solid rgb(192, 192, 192);
+    background-color: white;
+
+    li {
+      width: 20px;
+      height: 20px;
+      margin: 4px;
+      border-radius: 48%;
+      cursor: pointer;
+    }
+  }
+}
+
+.card-container:hover {
+  box-shadow: 0 0 8px rgb(119, 119, 119);
+}
+
+.orange-border {
+  // border: 1px solid orange;
+}
+
+.red-color {
+  background-color: #f28b82;
+}
+
+.orange-color {
+  background-color: #fbbc04;
+}
+
+.yellow-color {
+  background-color: #fff475;
+}
+
+.green-color {
+  background-color: #ccff90;
+}
+
+.cyan-color {
+  background-color: #a7ffeb;
+}
+
+.blue-color {
+  background-color: #cbf0f8;
+}
+
+.dark-blue-color {
+  background-color: #aecbfa;
+}
+
+.violet-color {
+  background-color: #d7aefb;
+}
+
+.pink-color {
+  background-color: #fdcfe8;
+}
+
+.maron-color {
+  background-color: #e6c9a8;
+}
+
+.gray-color {
+  background-color: #e8eaed;
 }
