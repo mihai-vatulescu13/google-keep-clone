@@ -1,16 +1,22 @@
-<section class="create-note-container">
+<section
+  class="create-note-container"
+  appClickOutside
+  (clickedInside)="onOpenNoteText()"
+  (clickedOutside)="onCloseNoteText()"
+>
   <h3>Create note</h3>
 
-  <!-- here we need 2 inputs: one for title, a second one for the text: -->
   <app-textfield
     [inputType]="'text'"
     [placeHolder]="'Title...'"
+    (textEmitter)="getTitle($event)"
   ></app-textfield>
 
   <app-textfield
     *ngIf="showNoteText"
     [inputType]="'text'"
     [placeHolder]="'Create note...'"
+    (textEmitter)="getText($event)"
   ></app-textfield>
 
   <section class="note-options">

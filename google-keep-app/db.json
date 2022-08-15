@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Note 1 title",
       "text": "this is note 1 with mock test content",
-      "selectedColor": "violet-color"
+      "selectedColor": "red-color"
     },
     {
       "id": 2,
@@ -15,8 +15,26 @@
     {
       "title": "mock note",
       "text": "test POST request",
-      "selectedColor": "yellow-color",
+      "selectedColor": "maron-color",
       "id": 3
+    },
+    {
+      "title": "poezie",
+      "text": "codrule",
+      "selectedColor": "gray-color",
+      "id": 4
+    },
+    {
+      "title": "poezie 2",
+      "text": "nimic de spus aici :))",
+      "selectedColor": "dark-blue-color",
+      "id": 5
+    },
+    {
+      "title": "viata cu louie",
+      "text": "asa este",
+      "selectedColor": "yellow-color",
+      "id": 6
     }
   ]
 }

@@ -5,6 +5,9 @@
   <app-create-note></app-create-note>
 
   <div class="notes-list">
-    <app-note *ngFor="let note of notesData" [noteContent]="note"></app-note>
+    <app-note
+      *ngFor="let note of notesService.notesData"
+      [noteContent]="note"
+    ></app-note>
   </div>
 </section>

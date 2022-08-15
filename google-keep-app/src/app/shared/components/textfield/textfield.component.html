@@ -1,3 +1,8 @@
 <!-- put a directive on this component for usage of different situations(search) -->
 <!-- will be 2 types of directives bedides of sizes:invisible and search -->
-<input class="textfield-input" [type]="inputType" [placeholder]="placeHolder" />
+<input
+  class="textfield-input"
+  [type]="inputType"
+  [placeholder]="placeHolder"
+  (change)="onTextChange($event)"
+/>

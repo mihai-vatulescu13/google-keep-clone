@@ -8,6 +8,8 @@ import { NOTES_URL } from './urls.data';
   providedIn: 'root',
 })
 export class NotesService {
+  public notesData: Array<NoteModel>;
+
   //in this service data will be received from the API:
   constructor(private http: HttpClient) {}
 

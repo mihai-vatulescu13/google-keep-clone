@@ -18,10 +18,7 @@ export class NoteComponent implements OnInit {
 
   constructor(private notesService: NotesService) {}
 
-  ngOnInit() {
-    // this.currentNoteData = this.noteContent;
-    console.log('initial note setting:', this.noteContent);
-  }
+  ngOnInit() {}
 
   public onOpenColorsMenu(): void {
     this.isColorMenuOpen = !this.isColorMenuOpen;
