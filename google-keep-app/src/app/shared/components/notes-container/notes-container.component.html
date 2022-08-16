@@ -1,7 +1,7 @@
 <!-- create note component will be created and rendered here: -->
 <!-- when the user clicks outside of the create note component the note gets created: -->
+
 <section class="notes-list-container">
-  <!-- <app-button (click)="onCreateNote()" [text]="'Create note'"></app-button> -->
   <app-create-note></app-create-note>
 
   <div class="notes-list">
@@ -9,5 +9,11 @@
       *ngFor="let note of notesService.notesData"
       [noteContent]="note"
     ></app-note>
+  </div>
+
+  <!-- modal wrapper: -->
+  <div *ngIf="activeNoteModal" class="modal-content">
+    <!-- modal -->
+    <app-note *ngIf="activeNoteModal" [noteContent]="noteModalData"></app-note>
   </div>
 </section>

@@ -4,37 +4,67 @@
       "id": 1,
       "title": "Note 1 title",
       "text": "this is note 1 with mock test content",
-      "selectedColor": "red-color"
+      "selectedColor": "pink-color"
     },
     {
       "id": 2,
       "title": "Note 2 title",
       "text": "this is note 2 with mock test content this is note 2 with mock test contentthis is note 2 with mock test contentthis is note 2 with mock test content",
-      "selectedColor": "green-color"
+      "selectedColor": "pink-color"
     },
     {
       "title": "mock note",
       "text": "test POST request",
-      "selectedColor": "maron-color",
+      "selectedColor": "pink-color",
       "id": 3
     },
     {
       "title": "poezie",
       "text": "codrule",
-      "selectedColor": "gray-color",
+      "selectedColor": "pink-color",
       "id": 4
     },
     {
       "title": "poezie 2",
       "text": "nimic de spus aici :))",
-      "selectedColor": "dark-blue-color",
+      "selectedColor": "violet-color",
       "id": 5
     },
     {
       "title": "viata cu louie",
       "text": "asa este",
-      "selectedColor": "yellow-color",
+      "selectedColor": "violet-color",
       "id": 6
+    },
+    {
+      "title": "asas",
+      "text": "sdfdf",
+      "selectedColor": "violet-color",
+      "id": 7
+    },
+    {
+      "title": "nu stiu ce e asta",
+      "text": "idk",
+      "selectedColor": "pink-color",
+      "id": 8
+    },
+    {
+      "title": "sdfsdf",
+      "text": "test 1234",
+      "selectedColor": "gray-color",
+      "id": 9
+    },
+    {
+      "title": "sdfsdf",
+      "text": "gffffff",
+      "selectedColor": "gray-color",
+      "id": 10
+    },
+    {
+      "title": "Untitled note",
+      "text": "mia kalsidsfdsf",
+      "selectedColor": "gray-color",
+      "id": 11
     }
   ]
 }
