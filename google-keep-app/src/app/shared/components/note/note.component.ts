@@ -33,4 +33,8 @@ export class NoteComponent implements OnInit {
       console.log('note update with success!');
     });
   }
+
+  public openModal() {
+    console.log('Modal opened');
+  }
 }

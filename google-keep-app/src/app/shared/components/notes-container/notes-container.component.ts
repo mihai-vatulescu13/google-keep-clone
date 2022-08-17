@@ -28,11 +28,15 @@ export class NotesContainerComponent implements OnInit {
     this.activeNoteModal = true;
   }
 
-  public onCloseModal(): void {
+  public onCloseModal(event: any): void {
+    event.stopPropagation();
+    console.log('sersdf');
     this.activeNoteModal = false;
   }
 
-  show() {
-    console.log('outside of the component');
+  //keep modal content component active using event bubbling to avoid event
+  //propagation between child and its parent:
+  public handleClick(event: any): void {
+    event.stopPropagation();
   }
 }

@@ -7,13 +7,22 @@
   <div class="notes-list">
     <app-note
       *ngFor="let note of notesService.notesData"
+      (click)="onOpenModal(note)"
       [noteContent]="note"
     ></app-note>
   </div>
 
   <!-- modal wrapper: -->
-  <div *ngIf="activeNoteModal" class="modal-content">
+  <div
+    *ngIf="activeNoteModal"
+    (click)="onCloseModal($event)"
+    class="modal-content"
+  >
     <!-- modal -->
-    <app-note *ngIf="activeNoteModal" [noteContent]="noteModalData"></app-note>
+    <app-note
+      id="modal-element"
+      (click)="handleClick($event)"
+      [noteContent]="noteModalData"
+    ></app-note>
   </div>
 </section>
