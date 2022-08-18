@@ -13,16 +13,19 @@
   </div>
 
   <!-- modal wrapper: -->
-  <div
-    *ngIf="activeNoteModal"
-    (click)="onCloseModal($event)"
-    class="modal-content"
-  >
+  <div *ngIf="activeNoteModal" (click)="onCloseModal()" class="modal-content">
     <!-- modal -->
-    <app-note
+    <app-modal
+      (click)="handleClick($event)"
+      [noteContent]="noteModalData"
+    ></app-modal>
+
+    <!-- 
+      <app-note
       id="modal-element"
       (click)="handleClick($event)"
       [noteContent]="noteModalData"
     ></app-note>
+     -->
   </div>
 </section>

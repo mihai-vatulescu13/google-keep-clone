@@ -1,5 +1,5 @@
 <section
-  id="note"
+  id="modal"
   class="card-container"
   [class]="noteContent.selectedColor"
   [ngClass]="'orange-border'"
@@ -7,7 +7,7 @@
   <h2>{{ noteContent.title }}</h2>
   <p>{{ noteContent.text }}</p>
 
-  <button (click)="onOpenColorsMenu($event)">
+  <button (click)="onOpenColorsMenu()">
     <fa-icon class="change-color-btn" [icon]="brushIcon"></fa-icon>
   </button>
 
@@ -16,7 +16,7 @@
     <li
       *ngFor="let color of colors"
       [ngClass]="color"
-      (click)="onSetNoteColor(color, $event)"
+      (click)="onSetNoteColor(color)"
     ></li>
   </ul>
 </section>

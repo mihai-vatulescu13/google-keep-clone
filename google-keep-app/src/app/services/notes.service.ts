@@ -9,6 +9,7 @@ import { NOTES_URL } from './urls.data';
 })
 export class NotesService {
   public notesData: Array<NoteModel>;
+  public currentNoteColor: string;
 
   //in this service data will be received from the API:
   constructor(private http: HttpClient) {}
@@ -48,5 +49,10 @@ export class NotesService {
       NOTES_URL + '/' + selectedNote.id,
       selectedNote
     );
+  }
+
+  public setNoteColor(color: string): void {
+    console.log(color);
+    this.currentNoteColor = color;
   }
 }

@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Note 1 title",
       "text": "this is note 1 with mock test content",
-      "selectedColor": "green-color"
+      "selectedColor": "cyan-color"
     },
     {
       "id": 2,
@@ -21,62 +21,8 @@
     {
       "title": "poezie",
       "text": "codrule",
-      "selectedColor": "pink-color",
-      "id": 4
-    },
-    {
-      "title": "poezie 2",
-      "text": "nimic de spus aici :))",
-      "selectedColor": "maron-color",
-      "id": 5
-    },
-    {
-      "title": "viata cu louie",
-      "text": "asa este",
-      "selectedColor": "violet-color",
-      "id": 6
-    },
-    {
-      "title": "asas",
-      "text": "sdfdf",
       "selectedColor": "cyan-color",
-      "id": 7
-    },
-    {
-      "title": "nu stiu ce e asta",
-      "text": "idk",
-      "selectedColor": "pink-color",
-      "id": 8
-    },
-    {
-      "title": "sdfsdf",
-      "text": "test 1234",
-      "selectedColor": "gray-color",
-      "id": 9
-    },
-    {
-      "title": "sdfsdf",
-      "text": "gffffff",
-      "selectedColor": "gray-color",
-      "id": 10
-    },
-    {
-      "title": "Untitled note",
-      "text": "mia kalsidsfdsf",
-      "selectedColor": "gray-color",
-      "id": 11
-    },
-    {
-      "title": "Untitled note",
-      "text": "sdfsdfffffffffffffffffffffffffffffff",
-      "selectedColor": "gray-color",
-      "id": 12
-    },
-    {
-      "title": "Untitled note",
-      "text": "Forza Eugen",
-      "selectedColor": "gray-color",
-      "id": 13
+      "id": 4
     }
   ]
 }

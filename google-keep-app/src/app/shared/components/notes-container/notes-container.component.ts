@@ -28,8 +28,7 @@ export class NotesContainerComponent implements OnInit {
     this.activeNoteModal = true;
   }
 
-  public onCloseModal(event: any): void {
-    event.stopPropagation();
+  public onCloseModal(): void {
     console.log('sersdf');
     this.activeNoteModal = false;
   }

@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NoteComponent } from './note.component';
+import { ModalComponent } from './modal.component';
 
 @NgModule({
-  declarations: [NoteComponent],
+  declarations: [ModalComponent],
   imports: [CommonModule, FontAwesomeModule],
-  exports: [NoteComponent],
+  exports: [ModalComponent],
 })
-export class NoteModule {}
+export class ModalModule {}
