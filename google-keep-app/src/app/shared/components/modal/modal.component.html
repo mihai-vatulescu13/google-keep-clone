@@ -1,11 +1,27 @@
 <section
   id="modal"
-  class="card-container"
-  [class]="noteContent.selectedColor"
+  class="modal-container"
+  [class]="modalService.noteModalData.selectedColor"
   [ngClass]="'orange-border'"
 >
-  <h2>{{ noteContent.title }}</h2>
-  <p>{{ noteContent.text }}</p>
+  <div class="modal-inputs">
+    <input
+      id="title-input"
+      type="text"
+      [value]="modalService.noteModalData.title"
+      #titleData
+      [placeholder]="modalService.noteModalData.title"
+      (change)="onSetNoteTitle(titleData.value)"
+    />
+    <input
+      id="text-input"
+      type="text"
+      [value]="modalService.noteModalData.text"
+      #textData
+      [placeholder]="modalService.noteModalData.text"
+      (change)="onSetNoteText(textData.value)"
+    />
+  </div>
 
   <button (click)="onOpenColorsMenu()">
     <fa-icon class="change-color-btn" [icon]="brushIcon"></fa-icon>

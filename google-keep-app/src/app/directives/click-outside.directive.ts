@@ -26,10 +26,10 @@ export class ClickOutsideDirective {
 
     if (!clickInside) {
       this.clickedOutside.emit();
-      console.log('clicked outside');
+      // console.log('clicked outside');
     } else {
       this.clickedInside.emit();
-      console.log('clicked inside');
+      // console.log('clicked inside');
     }
   }
 }

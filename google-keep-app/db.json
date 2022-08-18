@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Note 1 title",
-      "text": "this is note 1 with mock test content",
+      "text": "description changed",
       "selectedColor": "cyan-color"
     },
     {
@@ -13,16 +13,22 @@
       "selectedColor": "red-color"
     },
     {
-      "title": "mock note",
-      "text": "test POST request",
-      "selectedColor": "orange-color",
+      "title": "Note 3",
+      "text": "test PUT request",
+      "selectedColor": "violet-color",
       "id": 3
     },
     {
-      "title": "poezie",
-      "text": "codrule",
-      "selectedColor": "cyan-color",
+      "title": "Note 4 cica",
+      "text": "Hai lasa",
+      "selectedColor": "maron-color",
       "id": 4
+    },
+    {
+      "title": "Amintiri de la camin :)",
+      "text": "poveste de adormit lumea LMAO",
+      "selectedColor": "dark-blue-color",
+      "id": 5
     }
   ]
 }

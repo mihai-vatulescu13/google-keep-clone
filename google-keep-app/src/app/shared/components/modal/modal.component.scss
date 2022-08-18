@@ -1,4 +1,5 @@
-.card-container {
+// later on try to make the styles generic for the note and modal components:
+.modal-container {
   border-radius: 8px;
   width: 550px;
   min-height: 250px;
@@ -42,9 +43,33 @@
       cursor: pointer;
     }
   }
+
+  .modal-inputs {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      width: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      color: #202124;
+      background: transparent;
+      border: none;
+      outline: none;
+    }
+
+    #title-input {
+      font-size: 1.2rem;
+    }
+
+    #text-input {
+      font-size: 16px;
+    }
+  }
 }
 
-.card-container:hover {
+.modal-container:hover {
   box-shadow: 0 0 8px rgb(119, 119, 119);
 }
 

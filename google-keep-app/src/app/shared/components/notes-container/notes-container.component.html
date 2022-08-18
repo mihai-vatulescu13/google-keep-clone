@@ -15,10 +15,7 @@
   <!-- modal wrapper: -->
   <div *ngIf="activeNoteModal" (click)="onCloseModal()" class="modal-content">
     <!-- modal -->
-    <app-modal
-      (click)="handleClick($event)"
-      [noteContent]="noteModalData"
-    ></app-modal>
+    <app-modal (click)="handleClick($event)"></app-modal>
 
     <!-- 
       <app-note
