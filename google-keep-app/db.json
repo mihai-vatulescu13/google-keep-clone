@@ -2,14 +2,14 @@
   "notes": [
     {
       "id": 1,
-      "title": "Note 1 si atat",
-      "text": "description changed",
+      "title": "Note 1",
+      "text": "description changeds                                                                                                                   ",
       "selectedColor": "cyan-color"
     },
     {
       "id": 2,
       "title": "Note 2 title",
-      "text": "this is note 2 with mock test content this is note 2 with mock test contentthis is note 2 with mock test contentthis is note 2 with mock test content",
+      "text": "this is note 2 with mock test content this is note 2 with mock test contentthis is note 2 with mock test contentthis is note 2 with \n\nFac doar un test :))\nthis is note 2 with mock test content this is note 2 with mock test contentthis is note 2 with mock test contentthis is note 2 with mock test content",
       "selectedColor": "red-color"
     },
     {
@@ -29,6 +29,12 @@
       "text": "poveste de adormit lumea LMAO",
       "selectedColor": "dark-blue-color",
       "id": 5
+    },
+    {
+      "title": "Hello",
+      "text": "test cv",
+      "selectedColor": "pink-color",
+      "id": 6
     }
   ]
 }

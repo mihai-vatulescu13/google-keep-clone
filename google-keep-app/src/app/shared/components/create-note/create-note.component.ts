@@ -15,6 +15,8 @@ export class CreateNoteComponent {
     selectedColor: 'gray-color',
   };
 
+  public noteForm: NoteModel;
+
   constructor(public notesService: NotesService) {}
 
   public onOpenNoteText(): void {
@@ -32,6 +34,8 @@ export class CreateNoteComponent {
       this.newNote.title = 'Untitled';
       this.newNote.text = '';
     }
+
+    console.log(this.noteForm);
   }
 
   public getTitle(noteTitle: string): void {

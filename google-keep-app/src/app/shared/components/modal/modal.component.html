@@ -13,14 +13,16 @@
       [placeholder]="modalService.noteModalData.title"
       (change)="onSetNoteTitle(titleData.value)"
     />
-    <input
+
+    <textarea
       id="text-input"
-      type="text"
-      [value]="modalService.noteModalData.text"
+      cols="60"
+      rows="10"
       #textData
-      [placeholder]="modalService.noteModalData.text"
+      [value]="modalService.noteModalData.text"
       (change)="onSetNoteText(textData.value)"
-    />
+    >
+    </textarea>
   </div>
 
   <div class="modal-menu-buttons">
