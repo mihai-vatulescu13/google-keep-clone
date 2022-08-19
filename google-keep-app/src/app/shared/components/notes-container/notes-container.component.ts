@@ -14,7 +14,6 @@ export class NotesContainerComponent implements OnInit {
     text: '',
     selectedColor: '',
   };
-  public activeNoteModal: boolean = false;
 
   constructor(
     public notesService: NotesService,
@@ -24,11 +23,11 @@ export class NotesContainerComponent implements OnInit {
   ngOnInit(): void {
     //get notes from the API:
     this.notesService.getNotes().subscribe((result) => {
-      this.notesService.setNotesData(result);
+      this.notesService.setNotesObservable(result);
     });
 
     //update the notes observable:
-    this.notesService.getNotesData.subscribe((response) => {
+    this.notesService.getNotesObservable.subscribe((response) => {
       this.notesService.setNotes(response);
     });
   }
@@ -36,24 +35,23 @@ export class NotesContainerComponent implements OnInit {
   public onOpenModal(note: NoteModel): void {
     //update the modal using a behaviour subject:
     this.modalService.setModal(note);
-    this.activeNoteModal = true;
+    this.modalService.activeNoteModal = true;
   }
 
   public onCloseModal(): void {
-    this.activeNoteModal = false;
+    this.modalService.activeNoteModal = false;
 
+    //get data about current modal:
     this.modalService.getModal().subscribe((data) => {
       this.noteModalData = data;
     });
-
-    console.log('modal status:', this.modalService.modalChanged);
 
     if (this.modalService.modalChanged) {
       this.notesService
         .updateNote(this.noteModalData)
         .subscribe((updatedNote) => {
           //update the notes using the behaviour subject to avoid another request:
-          this.notesService.setNote(updatedNote);
+          this.notesService.setNotesAfterUpdate(updatedNote);
         });
     }
     this.modalService.resetModal();

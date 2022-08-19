@@ -23,13 +23,13 @@ export class CreateNoteComponent {
 
   public onCloseNoteText(): void {
     this.showNoteText = false;
-    if (this.newNote.text) {
+    if (this.newNote.text && this.newNote.title) {
       this.notesService
         .addNote(this.newNote)
         .subscribe((res) => this.notesService.notesData.push(res)); //updates notes arr after the succesfully response from the server
 
       //reset note status:
-      this.newNote.title = '';
+      this.newNote.title = 'Untitled';
       this.newNote.text = '';
     }
   }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faBrush } from '@fortawesome/free-solid-svg-icons';
+import { faBrush, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ModalService } from 'src/app/services/modal.service';
 import { NotesService } from 'src/app/services/notes.service';
 import { colorsOptions } from './note.data';
@@ -13,6 +13,7 @@ export class ModalComponent {
   public isColorMenuOpen: boolean = false;
   public colors: string[] = colorsOptions;
   public brushIcon = faBrush;
+  public trashIcon = faTrash;
 
   public title = document.getElementsByTagName('h2');
 
@@ -39,6 +40,7 @@ export class ModalComponent {
     });
   }
 
+  //replace below two methods by using Form Module instead of references:
   public onSetNoteTitle(newTitle: string): void {
     this.modalService.setModal({
       ...this.modalService.noteModalData,
@@ -50,6 +52,14 @@ export class ModalComponent {
     this.modalService.setModal({
       ...this.modalService.noteModalData,
       text: newText,
+    });
+  }
+
+  public onDeleteNote(noteId: number): void {
+    this.notesService.deleteNote(noteId).subscribe((res) => {
+      // here,after API call we need to update the UI and close the modal:
+      this.modalService.activeNoteModal = false;
+      this.notesService.setNotesAfterDeletion(noteId);
     });
   }
 }

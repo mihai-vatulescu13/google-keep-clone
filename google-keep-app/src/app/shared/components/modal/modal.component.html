@@ -23,9 +23,18 @@
     />
   </div>
 
-  <button (click)="onOpenColorsMenu()">
-    <fa-icon class="change-color-btn" [icon]="brushIcon"></fa-icon>
-  </button>
+  <div class="modal-menu-buttons">
+    <button (click)="onOpenColorsMenu()">
+      <fa-icon class="change-color-btn" [icon]="brushIcon"></fa-icon>
+    </button>
+
+    <button
+      *ngIf="modalService.noteModalData.id"
+      (click)="onDeleteNote(modalService.noteModalData.id)"
+    >
+      <fa-icon class="delete-note-btn" [icon]="trashIcon"></fa-icon>
+    </button>
+  </div>
 
   <!-- add on the bottom an color options list: -->
   <ul *ngIf="isColorMenuOpen">

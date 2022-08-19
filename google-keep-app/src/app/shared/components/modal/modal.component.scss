@@ -16,7 +16,8 @@
     cursor: pointer;
     background-color: white;
 
-    .change-color-btn {
+    .change-color-btn,
+    .delete-note-btn {
       color: gray;
       font-size: 1.5rem;
     }
@@ -41,6 +42,12 @@
       margin: 6px;
       border-radius: 45%;
       cursor: pointer;
+    }
+  }
+
+  .modal-menu-buttons {
+    button {
+      margin-right: 12px;
     }
   }
 

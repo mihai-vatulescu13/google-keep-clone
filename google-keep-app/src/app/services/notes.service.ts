@@ -13,11 +13,11 @@ export class NotesService {
 
   private _notesData$ = this._notesData.asObservable();
 
-  public setNotesData(newNotes: NoteModel[]): void {
+  public setNotesObservable(newNotes: NoteModel[]): void {
     this._notesData.next(newNotes);
   }
 
-  public get getNotesData(): Observable<NoteModel[]> {
+  public get getNotesObservable(): Observable<NoteModel[]> {
     return this._notesData$;
   }
 
@@ -54,17 +54,41 @@ export class NotesService {
   }
 
   public updateNote(selectedNote: NoteModel) {
+    // this.http
+    //   .put<NoteModel>(NOTES_URL + '/' + selectedNote.id, selectedNote)
+    //   .subscribe((data) => console.log('test', data));
+
     return this.http.put<NoteModel>(
       NOTES_URL + '/' + selectedNote.id,
       selectedNote
     );
   }
 
-  public setNote(newNote: NoteModel): void {
+  public deleteNote(noteId?: number): Observable<unknown> {
+    return this.http
+      .delete(NOTES_URL + '/' + noteId)
+      .pipe(catchError((error) => this.handleError(error)));
+  }
+
+  //update the UI after note edit:
+  public setNotesAfterUpdate(newNote: NoteModel): void {
     if (newNote.id) {
       this.notesData[newNote.id - 1] = newNote;
     }
-    this.setNotesData(this.notesData);
+    this.setNotesObservable(this.notesData);
+  }
+
+  //update the UI after note deletion:
+  public setNotesAfterDeletion(noteToDeleteId: number): void {
+    // this.notesData = this.notesData.filter((note) => {
+    //   return note.id !== noteToDeleteId;
+    // });
+
+    this._notesData.next(
+      this.notesData.filter((note) => {
+        return note.id !== noteToDeleteId;
+      })
+    );
   }
 
   public setNotes(notesArr: NoteModel[]): void {
