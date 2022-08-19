@@ -1,7 +1,7 @@
 <section
   id="note"
   class="card-container"
-  [class]="noteContent.selectedColor"
+  [style.background-color]="noteContent.selectedColor"
   [ngClass]="'orange-border'"
 >
   <h2>{{ noteContent.title }}</h2>
@@ -15,7 +15,7 @@
   <ul *ngIf="isColorMenuOpen">
     <li
       *ngFor="let color of colors"
-      [ngClass]="color"
+      [style.background-color]="color"
       (click)="onSetNoteColor(color, $event)"
     ></li>
   </ul>

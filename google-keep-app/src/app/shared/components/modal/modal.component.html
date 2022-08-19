@@ -1,7 +1,7 @@
 <section
   id="modal"
   class="modal-container"
-  [class]="modalService.noteModalData.selectedColor"
+  [style.background-color]="modalService.noteModalData.selectedColor"
   [ngClass]="'orange-border'"
 >
   <div class="modal-inputs">
@@ -42,7 +42,7 @@
   <ul *ngIf="isColorMenuOpen">
     <li
       *ngFor="let color of colors"
-      [ngClass]="color"
+      [style.background-color]="color"
       (click)="onSetNoteColor(color)"
     ></li>
   </ul>

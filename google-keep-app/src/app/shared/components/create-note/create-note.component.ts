@@ -12,7 +12,7 @@ export class CreateNoteComponent {
   public newNote: NoteModel = {
     title: 'Untitled note',
     text: '',
-    selectedColor: 'gray-color',
+    selectedColor: '#e8eaed',
   };
 
   public noteForm: NoteModel;

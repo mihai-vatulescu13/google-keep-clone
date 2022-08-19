@@ -4,36 +4,36 @@
       "id": 1,
       "title": "Note 1",
       "text": "description changeds                                                                                                                   ",
-      "selectedColor": "cyan-color"
+      "selectedColor": "#a7ffeb"
     },
     {
       "id": 2,
       "title": "Note 2 title",
       "text": "this is note 2 with mock test content this is note 2 with mock test contentthis is note 2 with mock test contentthis is note 2 with \n\nFac doar un test :))\nthis is note 2 with mock test content this is note 2 with mock test contentthis is note 2 with mock test contentthis is note 2 with mock test content",
-      "selectedColor": "red-color"
+      "selectedColor": "#f28b82"
     },
     {
       "title": "Note 3",
       "text": "test PUT request",
-      "selectedColor": "violet-color",
+      "selectedColor": "#d7aefb",
       "id": 3
     },
     {
       "title": "Note 4 cica",
       "text": "Hai lasa",
-      "selectedColor": "maron-color",
+      "selectedColor": "#e6c9a8",
       "id": 4
     },
     {
       "title": "Amintiri de la camin :)",
       "text": "poveste de adormit lumea LMAO",
-      "selectedColor": "dark-blue-color",
+      "selectedColor": "#aecbfa",
       "id": 5
     },
     {
       "title": "Hello",
       "text": "test cv",
-      "selectedColor": "pink-color",
+      "selectedColor": "#fdcfe8",
       "id": 6
     }
   ]
