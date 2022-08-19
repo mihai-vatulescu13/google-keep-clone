@@ -21,6 +21,27 @@ export class NotesService {
     return this._notesData$;
   }
 
+  //handle search logic:
+  private _searchPayload = new BehaviorSubject<string>('');
+  private _searchPayload$ = this._searchPayload.asObservable();
+
+  public setSearchPayload(newPayload: string) {
+    console.log('search payload:', newPayload);
+
+    // this.notesData = this.notesData.filter((element) => {
+    //   return element.title
+    //     .toLocaleLowerCase()
+    //     .includes(newPayload.toLocaleLowerCase());
+    // });
+
+    //continue from here also...
+    return this._searchPayload.next(newPayload);
+  }
+
+  public get getSearchPayload(): Observable<string> {
+    return this._searchPayload$;
+  }
+
   public notesData: Array<NoteModel> = [];
 
   constructor(private http: HttpClient) {}
@@ -54,10 +75,6 @@ export class NotesService {
   }
 
   public updateNote(selectedNote: NoteModel) {
-    // this.http
-    //   .put<NoteModel>(NOTES_URL + '/' + selectedNote.id, selectedNote)
-    //   .subscribe((data) => console.log('test', data));
-
     return this.http.put<NoteModel>(
       NOTES_URL + '/' + selectedNote.id,
       selectedNote
@@ -80,10 +97,6 @@ export class NotesService {
 
   //update the UI after note deletion:
   public setNotesAfterDeletion(noteToDeleteId: number): void {
-    // this.notesData = this.notesData.filter((note) => {
-    //   return note.id !== noteToDeleteId;
-    // });
-
     this._notesData.next(
       this.notesData.filter((note) => {
         return note.id !== noteToDeleteId;

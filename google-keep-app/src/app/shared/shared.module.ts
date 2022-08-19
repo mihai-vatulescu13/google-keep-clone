@@ -7,6 +7,7 @@ import { ModalModule } from './components/modal/modal.module';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { NoteModule } from './components/note/note.module';
 import { NotesContainerModule } from './components/notes-container/notes-container.module';
+import { SearchModule } from './components/search/search.module';
 import { SideMenuModule } from './components/side-menu/side-menu.module';
 
 const utilitiesModules = [
@@ -18,6 +19,7 @@ const utilitiesModules = [
   NoteModule,
   CreateNoteModule,
   ModalModule,
+  SearchModule,
 ];
 
 @NgModule({
