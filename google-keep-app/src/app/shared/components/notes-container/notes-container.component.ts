@@ -22,8 +22,14 @@ export class NotesContainerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //get notes from the API:
     this.notesService.getNotes().subscribe((result) => {
-      this.notesService.notesData = result;
+      this.notesService.setNotesData(result);
+    });
+
+    //update the notes observable:
+    this.notesService.getNotesData.subscribe((response) => {
+      this.notesService.setNotes(response);
     });
   }
 
@@ -36,22 +42,23 @@ export class NotesContainerComponent implements OnInit {
   public onCloseModal(): void {
     this.activeNoteModal = false;
 
-    //get all data about the note from the observable and send it to the server:
     this.modalService.getModal().subscribe((data) => {
       this.noteModalData = data;
     });
 
-    this.notesService.updateNote(this.noteModalData).subscribe((res) => {
-      console.log('note update with success! form modal', res);
-      //get all notes to render the updates:
-      this.notesService.getNotes().subscribe((result) => {
-        this.notesService.notesData = result;
-      });
-    });
+    console.log('modal status:', this.modalService.modalChanged);
+
+    if (this.modalService.modalChanged) {
+      this.notesService
+        .updateNote(this.noteModalData)
+        .subscribe((updatedNote) => {
+          //update the notes using the behaviour subject to avoid another request:
+          this.notesService.setNote(updatedNote);
+        });
+    }
   }
 
-  //keep modal content component active using event bubbling to avoid event
-  //propagation between child and its parent:
+  //avoid parent event propagation using this method:
   public handleClick(event: any): void {
     event.stopPropagation();
   }

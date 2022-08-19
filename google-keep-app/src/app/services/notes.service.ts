@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
 import { NoteModel } from '../shared/models/note.component.model';
 import { NOTES_URL } from './urls.data';
 
@@ -8,10 +8,21 @@ import { NOTES_URL } from './urls.data';
   providedIn: 'root',
 })
 export class NotesService {
-  public notesData: Array<NoteModel>;
-  public currentNoteColor: string;
+  // define a behaviour subject to handle all notes:
+  private _notesData = new BehaviorSubject<Array<NoteModel>>([]);
 
-  //in this service data will be received from the API:
+  private _notesData$ = this._notesData.asObservable();
+
+  public setNotesData(newNotes: NoteModel[]): void {
+    this._notesData.next(newNotes);
+  }
+
+  public get getNotesData(): Observable<NoteModel[]> {
+    return this._notesData$;
+  }
+
+  public notesData: Array<NoteModel> = [];
+
   constructor(private http: HttpClient) {}
 
   private handleError(error: HttpErrorResponse) {
@@ -32,12 +43,10 @@ export class NotesService {
     );
   }
 
-  //get all notes:
   public getNotes() {
     return this.http.get<NoteModel[]>(NOTES_URL);
   }
 
-  // create a note:
   public addNote(data: NoteModel) {
     return this.http
       .post<NoteModel>(NOTES_URL, data)
@@ -51,8 +60,14 @@ export class NotesService {
     );
   }
 
-  public setNoteColor(color: string): void {
-    console.log(color);
-    this.currentNoteColor = color;
+  public setNote(newNote: NoteModel): void {
+    if (newNote.id) {
+      this.notesData[newNote.id - 1] = newNote;
+    }
+    this.setNotesData(this.notesData);
+  }
+
+  public setNotes(notesArr: NoteModel[]): void {
+    this.notesData = notesArr;
   }
 }

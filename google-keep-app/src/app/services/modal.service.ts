@@ -21,7 +21,14 @@ export class ModalService {
 
   private _noteModal$ = this._noteModal.asObservable();
 
+  public modalChanged: boolean = false;
+
   public setModal(latestValue: NoteModel) {
+    // check if modal data got some changes to avoid useless API request:
+    this.modalChanged =
+      JSON.stringify(this.noteModalData) !== JSON.stringify(latestValue) &&
+      this.noteModalData.title !== '';
+
     return this._noteModal.next(latestValue);
   }
 
