@@ -35,4 +35,12 @@ export class ModalService {
   public getModal(): Observable<NoteModel> {
     return this._noteModal$;
   }
+
+  public resetModal(): void {
+    this.noteModalData = {
+      title: '',
+      text: '',
+      selectedColor: '',
+    };
+  }
 }

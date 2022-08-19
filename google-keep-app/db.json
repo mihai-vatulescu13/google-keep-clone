@@ -2,9 +2,9 @@
   "notes": [
     {
       "id": 1,
-      "title": "Note 1 title",
+      "title": "Note 1 si atat",
       "text": "description changed",
-      "selectedColor": "gray-color"
+      "selectedColor": "cyan-color"
     },
     {
       "id": 2,

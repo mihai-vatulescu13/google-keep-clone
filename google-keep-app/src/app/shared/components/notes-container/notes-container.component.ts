@@ -56,6 +56,7 @@ export class NotesContainerComponent implements OnInit {
           this.notesService.setNote(updatedNote);
         });
     }
+    this.modalService.resetModal();
   }
 
   //avoid parent event propagation using this method:
