@@ -9,42 +9,29 @@ import { NOTES_URL } from './urls.data';
 })
 export class NotesService {
   // define a behaviour subject to handle all notes:
-  private _notesData = new BehaviorSubject<Array<NoteModel>>([]);
-
-  private _notesData$ = this._notesData.asObservable();
-
-  public setNotesObservable(newNotes: NoteModel[]): void {
-    this._notesData.next(newNotes);
-  }
-
-  public get getNotesObservable(): Observable<NoteModel[]> {
-    return this._notesData$;
-  }
-
-  //handle search logic:
-  private _searchPayload = new BehaviorSubject<string>('');
-  private _searchPayload$ = this._searchPayload.asObservable();
-
-  public setSearchPayload(newPayload: string) {
-    console.log('search payload:', newPayload);
-
-    // this.notesData = this.notesData.filter((element) => {
-    //   return element.title
-    //     .toLocaleLowerCase()
-    //     .includes(newPayload.toLocaleLowerCase());
-    // });
-
-    //continue from here also...
-    return this._searchPayload.next(newPayload);
-  }
-
-  public get getSearchPayload(): Observable<string> {
-    return this._searchPayload$;
-  }
-
+  private notesData$ = new BehaviorSubject<Array<NoteModel>>([]);
   public notesData: Array<NoteModel> = [];
 
   constructor(private http: HttpClient) {}
+
+  public searchElem(text: string) {
+    // console.log(text);
+    console.log(
+      this.notesData$.value.filter((note) => {
+        return note.title
+          .toLocaleLowerCase()
+          .includes(text.toLocaleLowerCase());
+      })
+    );
+  }
+
+  public setNotesObservable(newNotes: NoteModel[]): void {
+    this.notesData$.next(newNotes);
+  }
+
+  public get getNotesObservable() {
+    return this.notesData$;
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
@@ -87,7 +74,6 @@ export class NotesService {
       .pipe(catchError((error) => this.handleError(error)));
   }
 
-  //update the UI after note edit:
   public setNotesAfterUpdate(newNote: NoteModel): void {
     if (newNote.id) {
       this.notesData[newNote.id - 1] = newNote;
@@ -95,9 +81,8 @@ export class NotesService {
     this.setNotesObservable(this.notesData);
   }
 
-  //update the UI after note deletion:
   public setNotesAfterDeletion(noteToDeleteId: number): void {
-    this._notesData.next(
+    this.notesData$.next(
       this.notesData.filter((note) => {
         return note.id !== noteToDeleteId;
       })

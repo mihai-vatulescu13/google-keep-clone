@@ -13,6 +13,6 @@ export class SearchComponent {
   constructor(public notesService: NotesService) {}
 
   public onSearchChange(textPayload: any) {
-    this.notesService.setSearchPayload(textPayload.target.value);
+    this.notesService.searchElem(textPayload.target.value);
   }
 }
