@@ -13,6 +13,7 @@ export class CreateNoteComponent {
     title: 'Untitled note',
     text: '',
     selectedColor: '#e8eaed',
+    backgroundImage: '',
   };
 
   public noteForm: NoteModel;

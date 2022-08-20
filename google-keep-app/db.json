@@ -4,37 +4,50 @@
       "id": 1,
       "title": "Note 1",
       "text": "description changed                                                                                                                   ",
-      "selectedColor": "#a7ffeb"
+      "selectedColor": "#e6c9a8",
+      "backgroundImage": ""
     },
     {
       "id": 2,
       "title": "Note 2 title",
       "text": "this is note 2 with mock test content this is note 2 with mock test contentthis is note 2 with mock test contentthis is note 2 with \n\nFac doar un test :))\nthis is note 2 with mock test content this is note 2 with mock test contentthis is note 2 with mock test contentthis is note 2 with mock test content",
-      "selectedColor": "#f28b82"
+      "selectedColor": "#f28b82",
+      "backgroundImage": "url(../../../../assets/notes-backgrounds/background8.jpg)"
     },
     {
       "title": "Note 3",
       "text": "test PUT request",
       "selectedColor": "#d7aefb",
-      "id": 3
+      "id": 3,
+      "backgroundImage": ""
     },
     {
       "title": "Note 4 cica zice",
       "text": "Hai lasa",
-      "selectedColor": "#e6c9a8",
-      "id": 4
+      "selectedColor": "",
+      "id": 4,
+      "backgroundImage": "url(../../../../assets/notes-backgrounds/background9.jpg)"
     },
     {
       "title": "Amintiri de la camin :)",
       "text": "poveste de adormit lumea LMAO",
-      "selectedColor": "#aecbfa",
-      "id": 5
+      "selectedColor": "#f28b82",
+      "id": 5,
+      "backgroundImage": "url(../../../../assets/notes-backgrounds/background3.jpg)"
     },
     {
       "title": "Hellos",
       "text": "test cv",
       "selectedColor": "#fdcfe8",
-      "id": 6
+      "id": 6,
+      "backgroundImage": "url(../../../../assets/notes-backgrounds/background6.jpg)"
+    },
+    {
+      "title": "Meh",
+      "text": "Camioanie :)",
+      "selectedColor": "#e6c9a8",
+      "id": 7,
+      "backgroundImage": "url(../../../../assets/notes-backgrounds/background7.jpg)"
     }
   ]
 }

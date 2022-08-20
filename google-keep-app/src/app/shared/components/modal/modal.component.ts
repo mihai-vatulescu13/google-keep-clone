@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { faBrush, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faBrush, faImage, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { backgroundNotesImages } from 'src/app/data/background-notes-images';
 import { ModalService } from 'src/app/services/modal.service';
 import { NotesService } from 'src/app/services/notes.service';
 import { colorsOptions } from './note.data';
@@ -14,6 +15,8 @@ export class ModalComponent {
   public colors: string[] = colorsOptions;
   public brushIcon = faBrush;
   public trashIcon = faTrash;
+  public imageIcon = faImage;
+  public backgroundImages: string[] = backgroundNotesImages;
 
   public title = document.getElementsByTagName('h2');
 
@@ -37,6 +40,15 @@ export class ModalComponent {
     this.modalService.setModal({
       ...this.modalService.noteModalData,
       selectedColor: selectedColor,
+      backgroundImage: '',
+    });
+  }
+
+  public onSetNoteBackgroundImage(selectedImg: string): void {
+    this.modalService.setModal({
+      ...this.modalService.noteModalData,
+      backgroundImage: selectedImg,
+      selectedColor: '',
     });
   }
 

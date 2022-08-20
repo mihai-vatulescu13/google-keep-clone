@@ -2,6 +2,7 @@
   id="modal"
   class="modal-container"
   [style.background-color]="modalService.noteModalData.selectedColor"
+  [style.background-image]="modalService.noteModalData.backgroundImage"
   [ngClass]="'orange-border'"
 >
   <div class="modal-inputs">
@@ -36,14 +37,25 @@
     >
       <fa-icon class="delete-note-btn" [icon]="trashIcon"></fa-icon>
     </button>
+
+    <button (click)="onOpenColorsMenu()">
+      <fa-icon class="upload-image-btn" [icon]="imageIcon"></fa-icon>
+    </button>
   </div>
 
-  <!-- add on the bottom an color options list: -->
   <ul *ngIf="isColorMenuOpen">
     <li
       *ngFor="let color of colors"
       [style.background-color]="color"
       (click)="onSetNoteColor(color)"
+    ></li>
+  </ul>
+  <ul *ngIf="isColorMenuOpen">
+    <li
+      *ngFor="let image of backgroundImages"
+      class="background-image-option"
+      [style.background-image]="image"
+      (click)="onSetNoteBackgroundImage(image)"
     ></li>
   </ul>
 </section>

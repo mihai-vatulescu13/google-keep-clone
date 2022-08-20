@@ -13,6 +13,7 @@ export class NotesContainerComponent implements OnInit {
     title: '',
     text: '',
     selectedColor: '',
+    backgroundImage: '',
   };
 
   constructor(

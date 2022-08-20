@@ -6,6 +6,7 @@
   margin: 15px;
   padding: 10px;
   border: 1px solid rgb(192, 192, 192);
+  background-size: cover;
 
   button {
     padding: 8px;
@@ -17,7 +18,8 @@
     background-color: white;
 
     .change-color-btn,
-    .delete-note-btn {
+    .delete-note-btn,
+    .upload-image-btn {
       color: gray;
       font-size: 1.5rem;
     }
@@ -40,6 +42,14 @@
       width: 25px;
       height: 23px;
       margin: 6px;
+      border-radius: 45%;
+      cursor: pointer;
+    }
+
+    .background-image-option {
+      width: 35px;
+      height: 35px;
+      margin: 2px;
       border-radius: 45%;
       cursor: pointer;
     }

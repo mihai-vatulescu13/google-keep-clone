@@ -2,6 +2,7 @@
   id="note"
   class="card-container"
   [style.background-color]="noteContent.selectedColor"
+  [style.background-image]="noteContent.backgroundImage"
   [ngClass]="'orange-border'"
 >
   <h2>{{ noteContent.title }}</h2>
@@ -17,6 +18,14 @@
       *ngFor="let color of colors"
       [style.background-color]="color"
       (click)="onSetNoteColor(color, $event)"
+    ></li>
+  </ul>
+  <ul *ngIf="isColorMenuOpen">
+    <li
+      *ngFor="let image of backgroundImages"
+      class="background-image-option"
+      [style.background-image]="image"
+      (click)="onSetNoteBackgroundImage(image, $event)"
     ></li>
   </ul>
 </section>
