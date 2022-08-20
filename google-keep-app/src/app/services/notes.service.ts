@@ -10,20 +10,10 @@ import { NOTES_URL } from './urls.data';
 export class NotesService {
   // define a behaviour subject to handle all notes:
   private notesData$ = new BehaviorSubject<Array<NoteModel>>([]);
+  // keep current notes array status:
   public notesData: Array<NoteModel> = [];
 
   constructor(private http: HttpClient) {}
-
-  public searchElem(text: string) {
-    // console.log(text);
-    console.log(
-      this.notesData$.value.filter((note) => {
-        return note.title
-          .toLocaleLowerCase()
-          .includes(text.toLocaleLowerCase());
-      })
-    );
-  }
 
   public setNotesObservable(newNotes: NoteModel[]): void {
     this.notesData$.next(newNotes);
@@ -85,6 +75,16 @@ export class NotesService {
     this.notesData$.next(
       this.notesData.filter((note) => {
         return note.id !== noteToDeleteId;
+      })
+    );
+  }
+
+  public setNotesAfterSearch(text: string) {
+    this.setNotes(
+      this.notesData$.value.filter((note) => {
+        return note.title
+          .toLocaleLowerCase()
+          .includes(text.toLocaleLowerCase());
       })
     );
   }

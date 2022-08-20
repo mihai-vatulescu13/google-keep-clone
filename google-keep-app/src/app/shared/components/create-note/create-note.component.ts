@@ -34,8 +34,6 @@ export class CreateNoteComponent {
       this.newNote.title = 'Untitled';
       this.newNote.text = '';
     }
-
-    console.log(this.noteForm);
   }
 
   public getTitle(noteTitle: string): void {
