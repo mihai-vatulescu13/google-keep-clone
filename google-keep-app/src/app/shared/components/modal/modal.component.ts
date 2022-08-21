@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { faBrush, faImage, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { backgroundNotesImages } from 'src/app/data/background-notes-images';
+import { colorsOptions } from 'src/app/data/note.data';
 import { ModalService } from 'src/app/services/modal.service';
 import { NotesService } from 'src/app/services/notes.service';
-import { colorsOptions } from './note.data';
 
 @Component({
   selector: 'app-modal',

@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faBrush } from '@fortawesome/free-solid-svg-icons';
 import { backgroundNotesImages } from 'src/app/data/background-notes-images';
+import { colorsOptions } from 'src/app/data/note.data';
 import { ModalService } from 'src/app/services/modal.service';
 import { NotesService } from 'src/app/services/notes.service';
 import { NoteModel } from '../../models/note.component.model';
-import { colorsOptions } from './note.data';
 
 @Component({
   selector: 'app-note',
