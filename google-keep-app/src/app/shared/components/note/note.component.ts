@@ -33,7 +33,7 @@ export class NoteComponent implements OnInit {
 
   public onSetNoteColor(selectedColor: string, event: any): void {
     event.stopPropagation();
-    // here we need o call a service method that send the chages to the server:
+
     this.noteContent.selectedColor = selectedColor;
     this.noteContent.backgroundImage = '';
 
@@ -45,7 +45,7 @@ export class NoteComponent implements OnInit {
 
   public onSetNoteBackgroundImage(selectedImg: string, event: any): void {
     event.stopPropagation();
-    // here we need o call a service method that send the chages to the server:
+
     this.noteContent.backgroundImage = selectedImg;
     this.noteContent.selectedColor = '';
 

@@ -1,0 +1,20 @@
+<form>
+  <div class="form-group">
+    <fieldset class="form-group">
+      <div class="custom-file fileInputProfileWrap">
+        <div class="row col-md-12">
+          <input
+            type="file"
+            (change)="CreateBase64String($event)"
+            class="fileInputProfile form-control"
+          />
+        </div>
+        <div class="img-space">
+          <ng-container *ngIf="isImageSaved">
+            <img [src]="cardImageBase64" style="width: 100px; height: 100px" />
+          </ng-container>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</form>

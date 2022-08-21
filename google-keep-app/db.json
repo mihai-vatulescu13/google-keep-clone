@@ -4,8 +4,8 @@
       "id": 1,
       "title": "Note 1",
       "text": "description changed                                                                                                                   ",
-      "selectedColor": "#e6c9a8",
-      "backgroundImage": ""
+      "selectedColor": "",
+      "backgroundImage": "url(../../../../assets/notes-backgrounds/background2.jpg)"
     },
     {
       "id": 2,
@@ -17,7 +17,7 @@
     {
       "title": "Note 3",
       "text": "test PUT request",
-      "selectedColor": "#d7aefb",
+      "selectedColor": "#f28b82",
       "id": 3,
       "backgroundImage": ""
     },
@@ -44,10 +44,10 @@
     },
     {
       "title": "Meh",
-      "text": "Camioanie :)",
-      "selectedColor": "#e6c9a8",
+      "text": "hai sa nu",
+      "selectedColor": "",
       "id": 7,
-      "backgroundImage": "url(../../../../assets/notes-backgrounds/background7.jpg)"
+      "backgroundImage": "url(../../../../assets/notes-backgrounds/background4.jpg)"
     }
   ]
 }

@@ -38,10 +38,12 @@
       <fa-icon class="delete-note-btn" [icon]="trashIcon"></fa-icon>
     </button>
 
-    <button (click)="onOpenColorsMenu()">
+    <button (click)="onOpenImgUploadMenu()">
       <fa-icon class="upload-image-btn" [icon]="imageIcon"></fa-icon>
     </button>
   </div>
+
+  <app-img-upload *ngIf="isImgUploadOpen"></app-img-upload>
 
   <ul *ngIf="isColorMenuOpen">
     <li

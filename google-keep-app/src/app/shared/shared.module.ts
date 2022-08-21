@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonModule } from './components/button/button.module';
 import { CreateNoteModule } from './components/create-note/create-note.module';
+import { ImgUploadModule } from './components/img-upload/img-upload.module';
 import { ModalModule } from './components/modal/modal.module';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { NoteModule } from './components/note/note.module';
@@ -20,6 +21,7 @@ const utilitiesModules = [
   CreateNoteModule,
   ModalModule,
   SearchModule,
+  ImgUploadModule,
 ];
 
 @NgModule({

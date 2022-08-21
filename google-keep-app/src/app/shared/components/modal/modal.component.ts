@@ -12,13 +12,12 @@ import { colorsOptions } from './note.data';
 })
 export class ModalComponent {
   public isColorMenuOpen: boolean = false;
+  public isImgUploadOpen: boolean = false;
   public colors: string[] = colorsOptions;
   public brushIcon = faBrush;
   public trashIcon = faTrash;
   public imageIcon = faImage;
   public backgroundImages: string[] = backgroundNotesImages;
-
-  public title = document.getElementsByTagName('h2');
 
   constructor(
     public notesService: NotesService,
@@ -34,6 +33,10 @@ export class ModalComponent {
 
   public onOpenColorsMenu(): void {
     this.isColorMenuOpen = !this.isColorMenuOpen;
+  }
+
+  public onOpenImgUploadMenu(): void {
+    this.isImgUploadOpen = !this.isImgUploadOpen;
   }
 
   public onSetNoteColor(selectedColor: string): void {
