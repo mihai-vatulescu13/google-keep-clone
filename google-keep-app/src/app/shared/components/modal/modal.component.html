@@ -6,11 +6,17 @@
   [ngClass]="'orange-border'"
 >
   <div class="modal-inputs">
-    <img
+    <div
       *ngIf="modalService.noteModalData.uploadedImage"
-      [src]="modalService.noteModalData.uploadedImage"
-      alt="note cover"
-    />
+      class="note-cover-image-container"
+      (mouseenter)="onShowDeleteBtnOnHover()"
+      (mouseleave)="onShowDeleteBtnOnHover()"
+    >
+      <img [src]="modalService.noteModalData.uploadedImage" alt="note cover" />
+      <button *ngIf="deleteImgButtonHover" (click)="onDeleteNoteImage()">
+        <fa-icon class="delete-note-img-btn" [icon]="trashIcon"></fa-icon>
+      </button>
+    </div>
 
     <input
       id="title-input"

@@ -18,6 +18,7 @@ export class ModalComponent {
   public trashIcon = faTrash;
   public imageIcon = faImage;
   public backgroundImages: string[] = backgroundNotesImages;
+  public deleteImgButtonHover: boolean = false;
 
   constructor(
     public notesService: NotesService,
@@ -76,5 +77,16 @@ export class ModalComponent {
       this.modalService.activeNoteModal = false;
       this.notesService.setNotesAfterDeletion(noteId);
     });
+  }
+
+  public onDeleteNoteImage(): void {
+    this.modalService.setModal({
+      ...this.modalService.noteModalData,
+      uploadedImage: '',
+    });
+  }
+
+  public onShowDeleteBtnOnHover(): void {
+    this.deleteImgButtonHover = !this.deleteImgButtonHover;
   }
 }
