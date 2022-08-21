@@ -5,4 +5,5 @@ export interface NoteModel {
   selectedColor: string;
   backgroundImage: string;
   uploadedImage: string;
+  lastUpdate: any;
 }

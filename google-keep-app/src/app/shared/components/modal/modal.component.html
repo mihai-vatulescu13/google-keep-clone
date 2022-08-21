@@ -53,6 +53,10 @@
     <button (click)="onOpenImgUploadMenu()">
       <fa-icon class="upload-image-btn" [icon]="imageIcon"></fa-icon>
     </button>
+
+    <h4>
+      Last update: {{ modalService.noteModalData.lastUpdate | date: "medium" }}
+    </h4>
   </div>
 
   <app-img-upload *ngIf="isImgUploadOpen"></app-img-upload>

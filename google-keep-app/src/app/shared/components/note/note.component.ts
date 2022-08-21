@@ -39,7 +39,7 @@ export class NoteComponent implements OnInit {
 
     this.notesService.updateNote(this.noteContent).subscribe((res) => {
       this.noteContent = res;
-      console.log('note update with success! From component', res);
+      // console.log('note update with success! From component', res);
     });
   }
 
@@ -51,7 +51,7 @@ export class NoteComponent implements OnInit {
 
     this.notesService.updateNote(this.noteContent).subscribe((res) => {
       this.noteContent = res;
-      console.log('note update with success! From component', res);
+      // console.log('note update with success! From component', res);
     });
   }
 }

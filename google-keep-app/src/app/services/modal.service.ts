@@ -13,6 +13,7 @@ export class ModalService {
     selectedColor: '',
     backgroundImage: '',
     uploadedImage: '',
+    lastUpdate: '',
   };
 
   private _noteModal = new BehaviorSubject<NoteModel>({
@@ -21,6 +22,7 @@ export class ModalService {
     selectedColor: '',
     backgroundImage: '',
     uploadedImage: '',
+    lastUpdate: '',
   });
 
   private _noteModal$ = this._noteModal.asObservable();
@@ -48,6 +50,7 @@ export class ModalService {
       selectedColor: '',
       backgroundImage: '',
       uploadedImage: '',
+      lastUpdate: new Date(),
     };
   }
 }

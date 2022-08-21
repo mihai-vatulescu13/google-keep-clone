@@ -15,6 +15,7 @@ export class CreateNoteComponent {
     selectedColor: '#e8eaed',
     backgroundImage: '',
     uploadedImage: '',
+    lastUpdate: new Date(),
   };
 
   public noteForm: NoteModel;

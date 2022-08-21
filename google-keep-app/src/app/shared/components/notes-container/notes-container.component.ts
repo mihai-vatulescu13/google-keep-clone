@@ -15,6 +15,7 @@ export class NotesContainerComponent implements OnInit {
     selectedColor: '',
     backgroundImage: '',
     uploadedImage: '',
+    lastUpdate: new Date(),
   };
 
   constructor(
