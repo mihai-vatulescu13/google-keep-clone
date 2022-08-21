@@ -14,6 +14,7 @@ export class NotesContainerComponent implements OnInit {
     text: '',
     selectedColor: '',
     backgroundImage: '',
+    uploadedImage: '',
   };
 
   constructor(
@@ -22,19 +23,16 @@ export class NotesContainerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //get notes from the API:
     this.notesService.getNotes().subscribe((result) => {
       this.notesService.setNotesObservable(result);
     });
 
-    //update the notes observable:
     this.notesService.getNotesObservable.subscribe((response) => {
       this.notesService.setNotes(response);
     });
   }
 
   public onOpenModal(note: NoteModel): void {
-    //update the modal using a behaviour subject:
     this.modalService.setModal(note);
     this.modalService.activeNoteModal = true;
   }
@@ -46,6 +44,8 @@ export class NotesContainerComponent implements OnInit {
     this.modalService.getModal().subscribe((data) => {
       this.noteModalData = data;
     });
+
+    // console.log('note modal data before sending', this.noteModalData);
 
     if (this.modalService.modalChanged) {
       this.notesService

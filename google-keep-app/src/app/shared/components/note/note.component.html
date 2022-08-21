@@ -5,6 +5,13 @@
   [style.background-image]="noteContent.backgroundImage"
   [ngClass]="'orange-border'"
 >
+  <img
+    *ngIf="noteContent.uploadedImage"
+    [src]="noteContent.uploadedImage"
+    class="note-cover-img"
+    alt="note cover"
+  />
+
   <h2>{{ noteContent.title }}</h2>
   <p>{{ noteContent.text }}</p>
 

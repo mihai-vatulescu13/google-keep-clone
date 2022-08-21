@@ -4,4 +4,5 @@ export interface NoteModel {
   text: string;
   selectedColor: string;
   backgroundImage: string;
+  uploadedImage: string;
 }

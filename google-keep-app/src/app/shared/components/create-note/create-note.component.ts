@@ -14,6 +14,7 @@ export class CreateNoteComponent {
     text: '',
     selectedColor: '#e8eaed',
     backgroundImage: '',
+    uploadedImage: '',
   };
 
   public noteForm: NoteModel;

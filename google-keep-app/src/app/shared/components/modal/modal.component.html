@@ -6,6 +6,12 @@
   [ngClass]="'orange-border'"
 >
   <div class="modal-inputs">
+    <img
+      *ngIf="modalService.noteModalData.uploadedImage"
+      [src]="modalService.noteModalData.uploadedImage"
+      alt="note cover"
+    />
+
     <input
       id="title-input"
       type="text"
