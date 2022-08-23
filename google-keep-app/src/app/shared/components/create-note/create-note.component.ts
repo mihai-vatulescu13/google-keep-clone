@@ -16,6 +16,7 @@ export class CreateNoteComponent {
     backgroundImage: '',
     uploadedImage: '',
     lastUpdate: new Date(),
+    isPinned: false,
   };
 
   public noteForm: NoteModel;

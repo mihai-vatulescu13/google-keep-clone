@@ -52,7 +52,6 @@ export class NotesService {
   }
 
   public updateNote(selectedNote: NoteModel) {
-    console.log('selected note to update:', selectedNote);
     return this.http.put<NoteModel>(NOTES_URL + '/' + selectedNote.id, {
       ...selectedNote,
       lastUpdate: new Date(),

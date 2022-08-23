@@ -1,16 +1,22 @@
-<!-- create note component will be created and rendered here: -->
-<!-- when the user clicks outside of the create note component the note gets created: -->
-
 <section class="notes-list-container">
   <app-create-note></app-create-note>
 
-  <div class="notes-list">
-    <app-note
-      *ngFor="let note of notesService.notesData"
-      (click)="onOpenModal(note)"
-      [noteContent]="note"
-    ></app-note>
-  </div>
+  <h2 *ngIf="pinnedNotesExistence === true">Pinned</h2>
+  <section class="pinned-notes-container">
+    <div *ngFor="let note of notesService.notesData" class="pinned-notes-list">
+      <div *ngIf="note.isPinned === true" class="pinned-note">
+        <app-note (click)="onOpenModal(note)" [noteContent]="note"></app-note>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes-list">
+    <div *ngFor="let note of notesService.notesData" class="pinned-notes-list">
+      <div *ngIf="note.isPinned === false" class="pinned-note">
+        <app-note (click)="onOpenModal(note)" [noteContent]="note"></app-note>
+      </div>
+    </div>
+  </section>
 
   <!-- modal wrapper: -->
   <div
@@ -18,7 +24,6 @@
     (click)="onCloseModal()"
     class="modal-content"
   >
-    <!-- modal -->
     <app-modal (click)="handleClick($event)"></app-modal>
   </div>
 </section>

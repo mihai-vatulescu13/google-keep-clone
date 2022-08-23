@@ -16,7 +16,9 @@ export class NotesContainerComponent implements OnInit {
     backgroundImage: '',
     uploadedImage: '',
     lastUpdate: new Date(),
+    isPinned: false,
   };
+  public pinnedNotesExistence: boolean = false;
 
   constructor(
     public notesService: NotesService,
@@ -28,8 +30,13 @@ export class NotesContainerComponent implements OnInit {
       this.notesService.setNotesObservable(result);
     });
 
+    //update notes list after changes:
     this.notesService.getNotesObservable.subscribe((response) => {
       this.notesService.setNotes(response);
+
+      this.pinnedNotesExistence = response.some((element) => {
+        return element.isPinned === true;
+      });
     });
   }
 

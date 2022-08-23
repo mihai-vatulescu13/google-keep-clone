@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faBrush } from '@fortawesome/free-solid-svg-icons';
+import { faBrush, faThumbTack } from '@fortawesome/free-solid-svg-icons';
 import { backgroundNotesImages } from 'src/app/data/background-notes-images';
 import { colorsOptions } from 'src/app/data/note.data';
 import { ModalService } from 'src/app/services/modal.service';
@@ -18,6 +18,8 @@ export class NoteComponent implements OnInit {
   public colors: string[] = colorsOptions;
   public backgroundImages: string[] = backgroundNotesImages;
   public brushIcon = faBrush;
+  public pinnedIcon = faThumbTack;
+  public activePinButton: boolean = false;
 
   constructor(
     public notesService: NotesService,
@@ -53,5 +55,27 @@ export class NoteComponent implements OnInit {
       this.noteContent = res;
       // console.log('note update with success! From component', res);
     });
+  }
+
+  public toggleActivePinNote(): void {
+    this.activePinButton = !this.activePinButton;
+  }
+
+  public onToggleNote(event: any): void {
+    event.stopPropagation();
+
+    this.modalService.setModal({
+      ...this.noteContent,
+      isPinned: !this.noteContent.isPinned,
+    });
+
+    this.notesService
+      .updateNote({
+        ...this.noteContent,
+        isPinned: !this.noteContent.isPinned,
+      })
+      .subscribe((updatedNote) => {
+        this.notesService.setNotesAfterUpdate(updatedNote);
+      });
   }
 }

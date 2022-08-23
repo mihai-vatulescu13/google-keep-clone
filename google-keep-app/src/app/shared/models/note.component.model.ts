@@ -6,4 +6,5 @@ export interface NoteModel {
   backgroundImage: string;
   uploadedImage: string;
   lastUpdate: any;
+  isPinned: boolean;
 }

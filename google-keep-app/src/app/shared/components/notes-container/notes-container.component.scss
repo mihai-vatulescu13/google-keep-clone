@@ -1,7 +1,23 @@
 .notes-list-container {
-  .notes-list {
+  .notes-list,
+  .pinned-notes-list {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  h2 {
+    margin-left: 15px;
+  }
+
+  .pinned-notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 85px;
+
+    .pinned-notes-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   .modal-content {
@@ -12,7 +28,7 @@
     height: 100%;
     background-color: rgba(59, 59, 59, 0.5);
     z-index: 99;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
   }

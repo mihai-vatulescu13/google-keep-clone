@@ -4,6 +4,8 @@
   [style.background-color]="noteContent.selectedColor"
   [style.background-image]="noteContent.backgroundImage"
   [ngClass]="'orange-border'"
+  (mouseenter)="toggleActivePinNote()"
+  (mouseleave)="toggleActivePinNote()"
 >
   <img
     *ngIf="noteContent.uploadedImage"
@@ -17,6 +19,14 @@
 
   <button (click)="onOpenColorsMenu($event)">
     <fa-icon class="change-color-btn" [icon]="brushIcon"></fa-icon>
+  </button>
+
+  <button
+    *ngIf="activePinButton"
+    class="pin-button"
+    (click)="onToggleNote($event)"
+  >
+    <fa-icon class="change-color-btn" [icon]="pinnedIcon"></fa-icon>
   </button>
 
   <!-- add on the bottom an color options list: -->
