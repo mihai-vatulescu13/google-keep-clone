@@ -53,8 +53,6 @@ export class NotesContainerComponent implements OnInit {
       this.noteModalData = data;
     });
 
-    // console.log('note modal data before sending', this.noteModalData);
-
     if (this.modalService.modalChanged) {
       this.notesService
         .updateNote(this.noteModalData)

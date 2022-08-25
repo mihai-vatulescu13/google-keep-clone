@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { faBrush, faImage, faTrash } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBrush,
+  faImage,
+  faPencil,
+  faTrash,
+} from '@fortawesome/free-solid-svg-icons';
 import { backgroundNotesImages } from 'src/app/data/background-notes-images';
 import { colorsOptions } from 'src/app/data/note.data';
 import { ModalService } from 'src/app/services/modal.service';
@@ -19,6 +24,7 @@ export class ModalComponent {
   public imageIcon = faImage;
   public backgroundImages: string[] = backgroundNotesImages;
   public deleteImgButtonHover: boolean = false;
+  public pencilIcon = faPencil;
 
   constructor(
     public notesService: NotesService,
@@ -88,5 +94,9 @@ export class ModalComponent {
 
   public onShowDeleteBtnOnHover(): void {
     this.deleteImgButtonHover = !this.deleteImgButtonHover;
+  }
+
+  public onOpenDrawCanvas(): void {
+    console.log('canvas draw opened');
   }
 }
